@@ -20,7 +20,7 @@ function App() {
       <Route exact path="/" component={ProductList}></Route>
       <Route path="/details" component={Details}></Route>
       <Route path="/cart" component={Cart}></Route>
-      <Route path = "/product/:id" render ={(props)=> <Product {...props}/>}></Route>
+      <Route path = "/product/:id"  render={(props) => <Product {...props}/>} ></Route>
       
       
     </Switch>

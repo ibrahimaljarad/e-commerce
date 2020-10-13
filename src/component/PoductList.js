@@ -18,12 +18,12 @@ function ProductList(props) {
     // console.log(data);
     // setHeader(data.tilte)
     const usersRes = await db.collection('store').get() 
-    console.log(usersRes);
+    // console.log(usersRes);
     const carTitle= usersRes.docs.map((title) => { 
     const data = title.data() 
         const id = title.id;
         return { id, ...data }})
-    console.log(carTitle);
+    // console.log(carTitle);
     setTitles(carTitle)
     const carImage= usersRes.docs.map((img) => img.data())
     // console.log(carTitle);
@@ -32,10 +32,10 @@ function ProductList(props) {
   }
   useEffect(()=>{
     fetchData()
-  },[titles])
+  },[])
   useEffect(()=>{
     fetchData()
-  },[carImg])
+  },[])
     return (
       <>
       
@@ -44,7 +44,7 @@ function ProductList(props) {
         
             
         {titles.map(title =>{ 
-          console.log(title.id)
+          // console.log(title.id)
             return( 
               
               <Link to={`/product/${title.id}`} >
